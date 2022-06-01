@@ -1,0 +1,8 @@
+auto lo
+iface lo inet loopback
+
+auto "{{nat_if}}"
+iface "{{nat_if}}" inet dhcp
+
+auto "{{dhcp_if}}"
+iface "{{dhcp_if}}" inet dhcp

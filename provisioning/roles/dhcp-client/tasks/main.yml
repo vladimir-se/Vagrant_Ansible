@@ -1,0 +1,7 @@
+---
+
+- name: Configure DHCP
+  template:
+    src=interfaces.j2
+    dest=/etc/network/interfaces
+  notify: Restart networking

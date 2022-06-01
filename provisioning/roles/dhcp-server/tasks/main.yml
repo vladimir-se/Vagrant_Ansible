@@ -1,0 +1,16 @@
+---
+
+- name: Install DHCP Server
+  apt:
+    pkg=isc-dhcp-server
+
+- name: Copy DHCP default-file
+  template:
+    src=isc-dhcp-server.j2 
+    dest=/etc/default/isc-dhcp-server
+
+- name: Configure DHCP
+  template:
+    src=dhcpd.conf.j2
+    dest=/etc/dhcp/dhcpd.conf
+  notify: Restart DHCP

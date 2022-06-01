@@ -1,0 +1,20 @@
+---
+soa: "admin@domain.loc"
+nat_if: "eth0"
+dhcp_if: "eth1"
+subnets:
+  dev.domain.com:
+    subnet: "192.168.99"
+    reverse: "99.168.192"
+    authoritative: true
+    start: 10
+    end: 50
+
+    # Static IPs
+    systems:
+      host1:
+        ip_octet: 25
+        mac: "00:00:00:00:00:00"
+      host2:
+        ip_octet: 30
+        mac: "00:00:00:00:00:00"
